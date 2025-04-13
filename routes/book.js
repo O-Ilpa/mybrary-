@@ -33,7 +33,6 @@ router.post("/", async (req, res) => {
   try {
     const newBook = await book.save();
     res.redirect(`books/${newBook.id  }`);
-    console.log("book saved Succesfully");
   } catch (err) {
     renderNewPage(res, book, err);
   }
@@ -89,13 +88,15 @@ router.delete("/:id", async (req, res) => {
       res.render("books/show", {
         book: book,
         errMessage: "could not remove book",
-      });
+      }); 
     }
   }
 });
 const saveCover = (book, coverEncoded) => {
-  if (coverEncoded == null) return;
-  const cover = JSON.parse(coverEncoded);
+  let cover
+  if (coverEncoded != null && coverEncoded != '' ) {
+    cover = JSON.parse(coverEncoded);
+  };
   if (cover != null && imageMimeTypes.includes(cover.type)) {
     book.coverImage = new Buffer.from(cover.data, "base64");
     book.coverImageType = cover.type;

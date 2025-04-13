@@ -1,6 +1,6 @@
+<%- include("../partials/message.ejs") %>
 <h2 class="page-header">Create Author</h2>
 <form action="/authors" method="POST">
-  <%- include("../partials/message.ejs") %>
   
   <%- include("_inputs.ejs", {author: author}) %>
   <div class="form-row form-row-end btn-row">
