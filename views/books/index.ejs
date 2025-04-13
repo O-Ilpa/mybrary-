@@ -1,8 +1,16 @@
 <h2 class="page-header">Search Books</h2>
-<form action="/books" method="GET">
-  <label for="">Title</label>
+<div class="form-row">
+  <div class="form-item">
+      <label for="">Title</label>
   <input type="text" name="title" value="<%=searchOptions.title%>" id="">
-  <button type="submit">Search</button>
+
+  </div>
+</div>
+<form action="/books" method="GET">
+  <div class="form-row form-row-end ">
+      <button class="btn btn-primary" type="submit">Search</button>
+
+  </div>
 </form>
 <br>
 <%books.forEach((book)=> {%>

@@ -2,8 +2,10 @@
   <%if (locals.errMessage != null) {%>
     <%=errMessage%>
     <%}%>
-  <br>
-  <%- include("_inputs.ejs") %>
-        <a href="/books">cancel</a>
-        <button type="submit">Update</button>
+    <%- include("_inputs.ejs") %>
+  <div class="form-row form-row-end btn-row">
+    <a class="btn btn-danger" href="/books">cancel</a>
+    <button class="btn btn-primary" type="submit">Update</button>
+  </div>
+
 </form> 
