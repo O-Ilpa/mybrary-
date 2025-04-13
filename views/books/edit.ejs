@@ -1,0 +1,9 @@
+<form action="/books/<%=book.id%>?_method=PUT" method="POST">
+  <%if (locals.errMessage != null) {%>
+    <%=errMessage%>
+    <%}%>
+  <br>
+  <%- include("_inputs.ejs") %>
+        <a href="/books">cancel</a>
+        <button type="submit">Update</button>
+</form> 
